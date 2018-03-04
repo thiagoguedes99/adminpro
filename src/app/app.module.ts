@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
 
 // rotas
 import { APP_ROUTES } from './app.routes';
@@ -11,6 +13,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { NopagefoundComponent } from './nopagefound/nopagefound.component';
 import { RegisterComponent } from './login/register.component';
+// import { IncrementadorComponent } from './components/incrementador/incrementador.component';
 
 
 @NgModule({
@@ -18,10 +21,12 @@ import { RegisterComponent } from './login/register.component';
     AppComponent,
     LoginComponent,
     NopagefoundComponent,
-    RegisterComponent
+    RegisterComponent,
+    // IncrementadorComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     APP_ROUTES,
     PagesModule
   ],
