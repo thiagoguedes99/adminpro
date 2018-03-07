@@ -13,7 +13,8 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { NopagefoundComponent } from './nopagefound/nopagefound.component';
 import { RegisterComponent } from './login/register.component';
-// import { IncrementadorComponent } from './components/incrementador/incrementador.component';
+// import { SettingService } from './service';
+import { ServiceModule } from './service/service.module';
 
 
 @NgModule({
@@ -22,15 +23,15 @@ import { RegisterComponent } from './login/register.component';
     LoginComponent,
     NopagefoundComponent,
     RegisterComponent,
-    // IncrementadorComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ServiceModule,
     APP_ROUTES,
     PagesModule
   ],
-  providers: [],
+providers: [/*SettingService*/],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
