@@ -49,6 +49,7 @@ export class AccoutSettingsComponent implements OnInit {
       // poderia buscar o atributo name ref.getAttribute('name')
       if (ref.getAttribute('data-theme') === temaAtual) {
         ref.classList.add('working');
+        console.log('tema atual');
         break;
       }
     }

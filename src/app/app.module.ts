@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 // rotas
@@ -27,6 +27,7 @@ import { ServiceModule } from './service/service.module';
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     ServiceModule,
     APP_ROUTES,
     PagesModule

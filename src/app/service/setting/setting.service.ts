@@ -26,6 +26,7 @@ export class SettingService {
       this.ajuste = JSON.parse(localStorage.getItem('ajustes'));
       this.aplicarTema(this.ajuste.tema);
     } else {
+      // console.log('viuuuuu')
     }
   }
 
