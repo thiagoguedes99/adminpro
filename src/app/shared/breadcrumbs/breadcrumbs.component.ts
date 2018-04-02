@@ -28,7 +28,7 @@ export class BreadcrumbsComponent implements OnInit {
     // .filter(evento => evento instanceof ActivationEnd)
     // .subscribe(evento => console.log(evento));
 
-    console.log(router.events.subscribe(e => console.log(e)));
+    // console.log(router.events.subscribe(e => console.log(e)));
 
     this.titulo.setTitle('breadcrumbs');
 

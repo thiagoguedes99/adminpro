@@ -5,15 +5,24 @@ import { HttpClientModule } from '@angular/common/http';
 import { SettingService,
         SharedService,
         SidebarService,
+        SubirService,
         UsuarioService,
         LoginGuardGuard } from './index';
+        // UploadImagemService} from './index';
 
 @NgModule({
   imports: [
     CommonModule,
     HttpClientModule
   ],
-  providers: [SettingService, SharedService, SidebarService, UsuarioService, LoginGuardGuard],
+  providers: [ SettingService,
+               SharedService,
+               SidebarService,
+               SubirService,
+               UsuarioService,
+               LoginGuardGuard,
+              //  UploadImagemService
+            ],
   declarations: []
 })
 export class ServiceModule { }

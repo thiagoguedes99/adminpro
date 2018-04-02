@@ -5,6 +5,7 @@ import 'rxjs/add/operator/map';
 
 import { Usuario } from '../../models/usuario.model';
 import { Router } from '@angular/router';
+import { SubirService } from '../index';
 
 @Injectable()
 export class UsuarioService {
@@ -13,7 +14,8 @@ export class UsuarioService {
   token: string;
 
   constructor( public http: HttpClient,
-                private rota: Router ) {
+              public rota: Router,
+              public _subirArtigo: SubirService) {
     this.carregaToken();
   }
 
@@ -64,9 +66,11 @@ export class UsuarioService {
   gravarSecao(id: string, token: string, usuario: Usuario) {
     localStorage.setItem('id', id);
     localStorage.setItem('token', token);
+    // usuario.id = id;
     localStorage.setItem('usuario', JSON.stringify(usuario) );
 
     this.usuario = usuario;
+    // this.usuario.id = id;
     this.token = token;
   }
 
@@ -92,6 +96,22 @@ export class UsuarioService {
     localStorage.removeItem('usuario');
 
     this.rota.navigate(['/login']);
+  }
+
+  mudarImagem(file: File, id: string) {
+    console.log('aqui está o id do cara')
+    console.log(id)
+    this._subirArtigo.subirArquivo(file,'usuario', id)
+        .then((resp: any) => {
+          console.log('foi porra');
+          console.log(resp);
+          this.usuario.img = resp.usuario.img;
+          this.gravarSecao(id, this.token, this.usuario);
+        })
+        .catch(resp => {
+          console.log('deu erro porra');
+          console.log(resp);
+        });
   }
 
 }

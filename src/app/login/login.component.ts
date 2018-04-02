@@ -80,6 +80,9 @@ export class LoginComponent implements OnInit {
       form.value.password
     );
 
+    console.log('login com usuario')
+    console.log(usuario)
+
     this._usuarioService.login(usuario, this.lembrar)
                         .subscribe(resp => {
                           console.log(resp);
