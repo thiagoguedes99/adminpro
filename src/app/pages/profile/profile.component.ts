@@ -39,8 +39,6 @@ export class ProfileComponent implements OnInit {
       // console.log(reader.result);
       this.imgTemp = reader.result;
     };
-
-
   }
 
   mudarImagem() {

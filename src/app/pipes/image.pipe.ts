@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class ImagePipe implements PipeTransform {
 
-  transform(image: string, tipo: string = 'usuario'): any {
+  transform(image: string = '', tipo: string = 'usuario'): any {
 
     if (image.includes('https')) {
       return image;
@@ -33,7 +33,6 @@ export class ImagePipe implements PipeTransform {
     //   default:
     //     break;
     // }
-
     return `${url}/${tipo}/${image}`
   }
 

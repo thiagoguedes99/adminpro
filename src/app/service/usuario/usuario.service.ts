@@ -114,4 +114,25 @@ export class UsuarioService {
         });
   }
 
+  carregarUsuarios(desde: number = 0) {
+    const url = `http://localhost:3000/usuario?qtd=${desde}`;
+
+    return this.http.get(url);
+
+  }
+
+  buscarUsuarios(nome: string) {
+    const url = `http://localhost:3000/busca/collection/usuario/${nome}`;
+
+    return this.http.get(url)
+                    .map((resp: any) => resp.usuario);
+
+  }
+
+  deletarUsuario(id: string) {
+    const url = `http://localhost:3000/usuario/${id}`;
+
+    return this.http.delete(url);
+  }
+
 }

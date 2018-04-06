@@ -11,6 +11,7 @@ import { SharedModule } from '../shared/shared.module';
 // rotas do projeto
 import { PAGES_ROUTES } from './pages.route';
 
+import { ModalUploadComponent } from '../components/modal-upload/modal-upload.component';
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProgressComponent } from './progress/progress.component';
@@ -22,12 +23,14 @@ import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { PipesModule } from '../pipes/pipes.module';
 import { ProfileComponent } from './profile/profile.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
 
 
 
 
 @NgModule({
   declarations: [
+    ModalUploadComponent,
     PagesComponent,
     DashboardComponent,
     ProgressComponent,
@@ -37,7 +40,8 @@ import { ProfileComponent } from './profile/profile.component';
     AccoutSettingsComponent,
     PromesasComponent,
     RxjsComponent,
-    ProfileComponent
+    ProfileComponent,
+    UsuariosComponent
   ],
   exports: [
     PagesComponent,

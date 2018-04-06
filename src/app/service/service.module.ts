@@ -8,6 +8,8 @@ import { SettingService,
         SubirService,
         UsuarioService,
         LoginGuardGuard } from './index';
+
+import { ModalUploadService } from '../components/modal-upload/modal-upload.service';
         // UploadImagemService} from './index';
 
 @NgModule({
@@ -21,6 +23,7 @@ import { SettingService,
                SubirService,
                UsuarioService,
                LoginGuardGuard,
+               ModalUploadService
               //  UploadImagemService
             ],
   declarations: []
