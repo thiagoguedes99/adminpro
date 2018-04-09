@@ -10,6 +10,8 @@ import { RxjsComponent } from './rxjs/rxjs.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LoginGuardGuard } from '../service/index';
 import { UsuariosComponent } from './usuarios/usuarios.component';
+import { HostipaisComponent } from './hostipais/hostipais.component';
+import { MedicosComponent } from './medicos/medicos.component';
 
 
 const routes: Routes = [
@@ -27,7 +29,9 @@ const routes: Routes = [
       { path: 'perfil', component: ProfileComponent },
 
       // mantenimentos
-      { path: 'usuarios', component: UsuariosComponent }
+      { path: 'usuarios', component: UsuariosComponent },
+      { path: 'hospitais', component: HostipaisComponent },
+      { path: 'medicos', component: MedicosComponent }
     ] },
 ];
 

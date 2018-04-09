@@ -43,6 +43,7 @@ export class RxjsComponent implements OnInit, OnDestroy {
           valor: contador
         }
 
+        console.log('next')
         observe.next(saida);
 
         // if (contador === 3) {
@@ -59,6 +60,8 @@ export class RxjsComponent implements OnInit, OnDestroy {
     .retry(2)
     // .map(resp => resp.valor);
     .map((resp: any) => {
+      console.log('map')
+      console.log(resp.valor)
       return resp.valor + 1;
     })
      // filter(resp, index)
