@@ -8,17 +8,18 @@ import { AccoutSettingsComponent } from './accout-settings/accout-settings.compo
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { ProfileComponent } from './profile/profile.component';
-import { LoginGuardGuard } from '../service/index';
+import { LoginGuardGuard, AdminGuard } from '../service/index';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { HostipaisComponent } from './hostipais/hostipais.component';
 import { MedicosComponent } from './medicos/medicos.component';
+import { BuscaComponent } from './busca/busca.component';
 
 
 const routes: Routes = [
   // { path: 'pa', component: PagesComponent,
   { path: '',
-    component: PagesComponent,
     canActivate: [ LoginGuardGuard ],
+    component: PagesComponent,
     children: [
       { path: 'dashboard', component: DashboardComponent, data: {titulo: 'Dashboard'} },
       { path: 'progress', component: ProgressComponent, data: {titulo: 'Progress Bar'} },
@@ -27,9 +28,14 @@ const routes: Routes = [
       { path: 'rxjs', component: RxjsComponent, data: {titulo: 'Rxjs'} },
       { path: 'account-settings', component: AccoutSettingsComponent, data: {titulo: 'Account Setting'} },
       { path: 'perfil', component: ProfileComponent },
+      { path: 'busca/:termino', component: BuscaComponent },
 
       // mantenimentos
-      { path: 'usuarios', component: UsuariosComponent },
+      {
+        path: 'usuarios',
+        canActivate: [ AdminGuard ],
+        component: UsuariosComponent
+      },
       { path: 'hospitais', component: HostipaisComponent },
       { path: 'medicos', component: MedicosComponent }
     ] },

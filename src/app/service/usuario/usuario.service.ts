@@ -6,6 +6,7 @@ import 'rxjs/add/operator/map';
 import { Usuario } from '../../models/usuario.model';
 import { Router } from '@angular/router';
 import { SubirService } from '../index';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class UsuarioService {
@@ -43,6 +44,8 @@ export class UsuarioService {
 
     return this.http.post(url, usuario)
                     .map((resp: any) => {
+                      console.log('resposta do login')
+                      console.log(resp)
                       // localStorage.setItem('id', resp.usuario._id);
                       // localStorage.setItem('token', resp.token);
                       // localStorage.setItem('usuario', JSON.stringify(resp.usuario) );
@@ -50,6 +53,12 @@ export class UsuarioService {
                       this.gravarSecao(resp.usuario._id, resp.token, resp.usuario);
 
                       return true;
+                    })
+                    .catch((err: any) => {
+                      console.log(err.error.mensage);
+                      alert(err.error.mensage);
+
+                      return Observable.throw(err);
                     });
   }
 

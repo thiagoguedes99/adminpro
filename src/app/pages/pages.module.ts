@@ -27,6 +27,7 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 import { HostipaisComponent } from './hostipais/hostipais.component';
 import { MedicosComponent } from './medicos/medicos.component';
 import { MedicoComponent } from './medicos/medico/medico.component';
+import { BuscaComponent } from './busca/busca.component';
 
 
 
@@ -47,7 +48,8 @@ import { MedicoComponent } from './medicos/medico/medico.component';
     UsuariosComponent,
     HostipaisComponent,
     MedicosComponent,
-    MedicoComponent
+    MedicoComponent,
+    BuscaComponent
   ],
   exports: [
     PagesComponent,
