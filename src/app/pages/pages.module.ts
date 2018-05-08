@@ -1,4 +1,5 @@
-import { BrowserModule } from '@angular/platform-browser';
+// import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
@@ -34,8 +35,8 @@ import { BuscaComponent } from './busca/busca.component';
 
 @NgModule({
   declarations: [
-    ModalUploadComponent,
-    PagesComponent,
+    // ModalUploadComponent,
+    // PagesComponent,
     DashboardComponent,
     ProgressComponent,
     Graficas1Component,
@@ -52,13 +53,14 @@ import { BuscaComponent } from './busca/busca.component';
     BuscaComponent
   ],
   exports: [
-    PagesComponent,
+    // PagesComponent,
     DashboardComponent,
     ProgressComponent,
     Graficas1Component,
   ],
   imports: [
-    BrowserModule,
+    // BrowserModule,
+    CommonModule,
     FormsModule,
     ChartsModule,
     SharedModule,

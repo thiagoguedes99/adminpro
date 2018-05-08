@@ -8,7 +8,7 @@ import { AccoutSettingsComponent } from './accout-settings/accout-settings.compo
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { ProfileComponent } from './profile/profile.component';
-import { LoginGuardGuard, AdminGuard } from '../service/index';
+import { LoginGuardGuard, AdminGuard, VerificaTokenGuard } from '../service/index';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { HostipaisComponent } from './hostipais/hostipais.component';
 import { MedicosComponent } from './medicos/medicos.component';
@@ -17,11 +17,16 @@ import { BuscaComponent } from './busca/busca.component';
 
 const routes: Routes = [
   // { path: 'pa', component: PagesComponent,
-  { path: '',
-    canActivate: [ LoginGuardGuard ],
-    component: PagesComponent,
-    children: [
-      { path: 'dashboard', component: DashboardComponent, data: {titulo: 'Dashboard'} },
+  // { path: '',
+  //   canActivate: [ LoginGuardGuard ],
+  //   component: PagesComponent,
+  //   children: [
+      {
+        path: 'dashboard',
+        canActivate: [ VerificaTokenGuard ],
+        component: DashboardComponent,
+        data: { titulo: 'Dashboard' }
+      },
       { path: 'progress', component: ProgressComponent, data: {titulo: 'Progress Bar'} },
       { path: 'graficas1', component: Graficas1Component, data: {titulo: 'Gráficos'} },
       { path: 'promessas', component: PromesasComponent, data: {titulo: 'Promises'} },
@@ -38,7 +43,8 @@ const routes: Routes = [
       },
       { path: 'hospitais', component: HostipaisComponent },
       { path: 'medicos', component: MedicosComponent }
-    ] },
+    // ]
+  // },
 ];
 
 export const PAGES_ROUTES = RouterModule.forChild( routes );

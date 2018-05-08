@@ -15,6 +15,8 @@ import { NopagefoundComponent } from './nopagefound/nopagefound.component';
 import { RegisterComponent } from './login/register.component';
 // import { SettingService } from './service';
 import { ServiceModule } from './service/service.module';
+import { PagesComponent } from './pages/pages.component';
+import { SharedModule } from './shared/shared.module';
 
 
 
@@ -24,6 +26,7 @@ import { ServiceModule } from './service/service.module';
     LoginComponent,
     NopagefoundComponent,
     RegisterComponent,
+    PagesComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,8 @@ import { ServiceModule } from './service/service.module';
     ReactiveFormsModule,
     ServiceModule,
     APP_ROUTES,
-    PagesModule
+    // PagesModule, // retirado pois agora será feito com o lazy load.
+    SharedModule
   ],
 providers: [/*SettingService*/],
   bootstrap: [AppComponent]

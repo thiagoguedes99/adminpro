@@ -6,6 +6,7 @@ import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { PipesModule } from '../pipes/pipes.module';
+import { ModalUploadComponent } from '../components/modal-upload/modal-upload.component';
 
 
 
@@ -15,17 +16,19 @@ import { PipesModule } from '../pipes/pipes.module';
   imports: [
     CommonModule,
     RouterModule,
-    PipesModule
+    PipesModule,
   ],
   declarations: [
     BreadcrumbsComponent,
     HeaderComponent,
-    SidebarComponent
+    SidebarComponent,
+    ModalUploadComponent
   ],
   exports: [
     BreadcrumbsComponent,
     HeaderComponent,
-    SidebarComponent
+    SidebarComponent,
+    ModalUploadComponent
   ],
 })
 export class SharedModule {}

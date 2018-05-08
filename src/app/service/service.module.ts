@@ -9,7 +9,8 @@ import { SettingService,
         UsuarioService,
         LoginGuardGuard,
         HospitalService,
-        AdminGuard } from './index';
+        AdminGuard,
+        VerificaTokenGuard } from './index';
 
 import { ModalUploadService } from '../components/modal-upload/modal-upload.service';
         // UploadImagemService} from './index';
@@ -28,6 +29,7 @@ import { ModalUploadService } from '../components/modal-upload/modal-upload.serv
                ModalUploadService,
                HospitalService,
                AdminGuard,
+               VerificaTokenGuard
               //  UploadImagemService
             ],
   declarations: []

@@ -20,6 +20,22 @@ export class UsuarioService {
     this.carregaToken();
   }
 
+  renovarToken() {
+    const url = 'http://localhost:3000/login/novotoken';
+
+    return this.http.get(url)
+                    .map((resp: any) => {
+                      this.token = resp.token;
+                      localStorage.setItem('token', this.token);
+
+                      return true;
+                    })
+                    .catch((err: any) => {
+                      this.rota.navigate(['/login']);
+                      return Observable.throw(err);
+                    });
+  }
+
   criarUsuario( usuario: Usuario ) {
     const url = 'http://localhost:3000/usuario';
 
